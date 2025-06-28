@@ -42,3 +42,8 @@ pytest_cache/
 vectorstore/
 docs/*
 !docs/.gitkeep
+
+# Notebooks data
+notebooks/data/*
+!notebooks/data/
+!notebooks/data/.gitkeep
