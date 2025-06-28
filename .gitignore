@@ -47,3 +47,6 @@ docs/*
 notebooks/data/*
 !notebooks/data/
 !notebooks/data/.gitkeep
+
+# Langgraph_api
+.langgraph_api
