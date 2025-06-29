@@ -16,7 +16,9 @@ dependencies = [
     "boto3 (>=1.38.41,<2.0.0)",
     "ipykernel (>=6.29.5,<7.0.0)",
     "rasterio (>=1.4.3,<2.0.0)",
-    "matplotlib (>=3.10.3,<4.0.0)"
+    "matplotlib (>=3.10.3,<4.0.0)",
+    "pyproj (>=3.7.1,<4.0.0)",
+    "pypdf2 (>=3.0.1,<4.0.0)"
 ]
 
 [tool.poetry]
