@@ -127,7 +127,7 @@ if __name__ == "__main__":
     os.makedirs(output_dir, exist_ok=True)
 
     # File path
-    output_path = os.path.join(output_dir, "known_sites_output.txt")
+    output_path = os.path.join(output_dir, "known_sites_wiki_output.txt")
 
     # Collect all assistant messages
     output_lines = []

@@ -48,5 +48,10 @@ notebooks/data/*
 !notebooks/data/
 !notebooks/data/.gitkeep
 
+# Output data
+data/*
+!data/
+!data/.gitkeep
+
 # Langgraph_api
 .langgraph_api

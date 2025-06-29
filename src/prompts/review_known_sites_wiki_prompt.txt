@@ -1,0 +1,13 @@
+Review the following list of archaeological sites. Ensure that **every** entry includes:
+- Site name
+- Country
+- Environmental features (non-empty string)
+
+If you make some inferences, ensure they are based on the provided Wikipedia pages or make sure 
+to note them as YOUR assumptions.
+If any of these are missing, which is usually indicated with a 'Not specified', 
+incomplete in **any** entry, respond with:
+REVISE
+
+Otherwise, return:
+COMPLETE

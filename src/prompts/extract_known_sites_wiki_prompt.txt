@@ -1,0 +1,35 @@
+You are a scientific assistant helping to extract structured information from Wikipedia pages listing archaeological sites in the Amazonas Region:
+
+1. https://en.wikipedia.org/wiki/Caraj%C3%ADa
+2. https://en.wikipedia.org/wiki/Gran_Saposoa
+3. https://en.wikipedia.org/wiki/Gran_Vilaya
+4. https://en.wikipedia.org/wiki/Ku%C3%A9lap
+5. https://en.wikipedia.org/wiki/Laguna_de_las_Momias
+6. https://en.wikipedia.org/wiki/Llactan
+7. https://en.wikipedia.org/wiki/Machu_Pirqa
+8. https://en.wikipedia.org/wiki/Purunllacta_(Cheto)
+9. https://en.wikipedia.org/wiki/Purunllacta,_Soloco
+10. https://en.wikipedia.org/wiki/Carachupa
+11. https://en.wikipedia.org/wiki/Cochabamba_(archaeological_site)
+12. https://en.wikipedia.org/wiki/Revash
+13. https://en.wikipedia.org/wiki/Sarcophagi_of_Caraj%C3%ADa
+14. https://en.wikipedia.org/wiki/Wilca
+
+Your task is to extract for each known site:
+- The site's name
+- The site's geographic coordinates 
+- The country it is located in (e.g., Peru, Brazil, Colombia)
+- A list of key geographic or environmental features useful to identify or describe the site (e.g., elevation, vegetation type, river proximity, soil, mineral composition, climate)
+- Be exhaustive and include all sites mentioned in the main page and any linked subcategories. Take your time to ensure completeness.
+
+Return a Python list of dictionaries like this:
+
+[
+  {{
+    "site": "Name of site",
+    "coordinates": "DMS",
+    "country": "Country Name",
+    "features": "brief description of features"
+  }},
+  ...
+]
