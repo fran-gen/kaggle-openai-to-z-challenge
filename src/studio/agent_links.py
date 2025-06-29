@@ -75,7 +75,8 @@ Review the following list of archaeological sites. Ensure that **every** entry i
 - Country
 - Environmental features (non-empty string)
 
-If any of these are missing or incomplete in **any** entry, respond with:
+If any of these are missing, which is usually indicated with a 'Not specified', 
+incomplete in **any** entry, respond with:
 REVISE
 
 Otherwise, return:
@@ -84,7 +85,7 @@ COMPLETE
     print("[DEBUG] Reviewing for completeness...")
     review = llm_review.invoke(review_prompt + f"\n\n{last_response}")
 
-    if "REVISE" in review.content and counter < 10:
+    if "REVISE" in review.content and counter < 20:
         print("[DEBUG] Incomplete — rerunning extraction")
         return {"messages": state["messages"], "counter": counter}  # keep counter and loop back
     else:
@@ -99,7 +100,7 @@ builder.add_node("review", review_node)
 builder.set_entry_point("extract")
 builder.add_conditional_edges(
     "review",
-    lambda state: "extract" if state.get("counter", 0) < 10 and "REVISE" in state["messages"][-1].content else END
+    lambda state: "extract" if state.get("counter", 0) < 20 and "REVISE" in state["messages"][-1].content else END
 )
 builder.add_edge("extract", "review")
 
@@ -113,11 +114,12 @@ def get_graph():
 if __name__ == "__main__":
     user_message = {
         "role": "user",
-        "content": "Extract all known archaeological sites in the Amazonas region from Wikipedia, with coordinates and features. Be exhaustive"
+        "content": "Extract all known archaeological sites in the Amazonas region from Wikipedia, "
+            "with coordinates and features. Be exhaustive in the description provided. Do not leave fields not specified."
     }
     result = graph.invoke({"messages": [user_message], "counter": 0})
 
-    # Go up three levels to get project root from current script
+    # Go up twp levels to get project root from current script
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     
     # Create output dir relative to root (openai-to-z-challenge/data/output)
@@ -125,7 +127,7 @@ if __name__ == "__main__":
     os.makedirs(output_dir, exist_ok=True)
 
     # File path
-    output_path = os.path.join(output_dir, "sites_output.txt")
+    output_path = os.path.join(output_dir, "known_sites_output.txt")
 
     # Collect all assistant messages
     output_lines = []
@@ -133,8 +135,7 @@ if __name__ == "__main__":
         role = getattr(msg, "role", type(msg).__name__.replace("Message", "").lower())
         content = getattr(msg, "content", str(msg))
         print(f"{role.upper()}: {content}")
-        if role == "assistant":
-            output_lines.append(content)
+        output_lines.append(f"{role.upper()}: {content}")
 
     # Save combined assistant messages only
     with open(output_path, "w", encoding="utf-8") as f:

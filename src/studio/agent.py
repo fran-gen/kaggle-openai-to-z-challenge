@@ -10,8 +10,11 @@ from langgraph.graph import END, MessagesState, StateGraph
 # Load environment variables
 load_dotenv()
 
-# Absolute path to FAISS vectorstore
-vectorstore_path = "/Users/macbook/Desktop/CodeProjects/openai-to-z-challenge/src/openai_to_z_challenge/vectorstore/faiss_index"
+# Get the abs path to the project root (one level up from this script's directory)
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+# Build the full path to the FAISS vectorstore directory inside the project
+vectorstore_path = os.path.join(project_root, "vectorstore/faiss_index")
 
 print("Looking for index.faiss at:", os.path.join(vectorstore_path, "index.faiss"))
 assert os.path.exists(os.path.join(vectorstore_path, "index.faiss")), "index.faiss not found"
@@ -48,7 +51,7 @@ qa_chain = RetrievalQA.from_chain_type(
     chain_type_kwargs={"prompt": rag_prompt},
 )
 
-# Node 1: Generate RAG answer using gpt-4o
+# Node 1: Generate RAG answer using gpt-4.1
 def rag_node(state: MessagesState):
     user_message = state["messages"][-1].content
     print("[DEBUG] RAG invoked with:", user_message)
@@ -102,9 +105,27 @@ def get_graph():
 
 # CLI runner
 if __name__ == "__main__":
+    
+    # Go up twp levels to get project root from current script
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    
+    # Create output dir relative to root (openai-to-z-challenge/data/output)
+    output_dir = os.path.join(project_root, "data", "output")
+    os.makedirs(output_dir, exist_ok=True)
+
+    # File path
+    output_path = os.path.join(output_dir, "unknown_sites_output.txt")
+
+    # Collect all assistant messages
+    output_lines = []
     user_message = {"role": "user", "content": "Where might there be unknown archaeological sites in the Amazon?"}
     result = graph.invoke({"messages": [user_message]})
     for msg in result["messages"]:
         role = getattr(msg, "role", type(msg).__name__.replace("Message", "").lower())
         content = getattr(msg, "content", str(msg))
         print(f"{role.upper()}: {content}")
+        output_lines.append(f"{role.upper()}: {content}")
+
+    # Save combined assistant messages only
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(output_lines))
