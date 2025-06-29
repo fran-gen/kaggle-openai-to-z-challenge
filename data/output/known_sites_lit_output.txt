@@ -1,0 +1,64 @@
+HUMAN: List all known archaeological sites in the Amazon described in the literature.
+
+AI: [
+  {
+    "site": "Kuikuro study area (Upper Xingu)",
+    "region": "Brazil",
+    "features": "Large circular villages with central plazas, earthworks, and specialized deposits; evidence of complex settlement patterns and intensive agriculture; associated with the Kuikuro people in the headwaters of the Xingu River, Mato Grosso.",
+    "source": "Lost Cities of the Amazon, Scientific American, October 2009"
+  },
+  {
+    "site": "X13 (Heulugihïtï)",
+    "region": "Brazil",
+    "features": "Archaeological site adjacent to Kuikuro village, associated with traditional Kuikuro subsistence activities such as fishing; part of the Upper Xingu complex of circular villages.",
+    "source": "Lost Cities of the Amazon, Scientific American, October 2009"
+  },
+  {
+    "site": "Açutuba",
+    "region": "Brazil",
+    "features": "Large archaeological site on the lower Rio Negro in central Amazonia, with a total area of 90 ha; significant for its size and evidence of complex societies.",
+    "source": "Urban Archaeology in the Lower Amazon: Fieldwork Uncovering Large Pre-Colonial Villages in Santarém, Journal of Field Archaeology, 2025"
+  },
+  {
+    "site": "Nova Cidade",
+    "region": "Brazil",
+    "features": "Ceramic site in Manaus, Amazonas state, covering 12 ha and containing more than 240 funerary urns from the Paredão phase; now severely impacted by urban development.",
+    "source": "Urban Archaeology in the Lower Amazon: Fieldwork Uncovering Large Pre-Colonial Villages in Santarém, Journal of Field Archaeology, 2025"
+  },
+  {
+    "site": "Santarém",
+    "region": "Brazil",
+    "features": "Urban area with large pre-colonial villages, extensive Amazonian dark earths (ADEs), and evidence of complex societies; sites in Santarém can exceed 100 ha in size.",
+    "source": "Urban Archaeology in the Lower Amazon: Fieldwork Uncovering Large Pre-Colonial Villages in Santarém, Journal of Field Archaeology, 2025"
+  },
+  {
+    "site": "Belterra",
+    "region": "Brazil",
+    "features": "Site in the Santarém region with Amazonian dark earths (ADEs) and associated with distinct settlement patterns and agricultural areas (terra mulata).",
+    "source": "Urban Archaeology in the Lower Amazon: Fieldwork Uncovering Large Pre-Colonial Villages in Santarém, Journal of Field Archaeology, 2025"
+  },
+  {
+    "site": "Arapiuns River sites",
+    "region": "Brazil",
+    "features": "Sites in the Santarém region with Amazonian dark earths (ADEs) and adjacent agricultural areas (terra mulata), indicating complex settlement and land use.",
+    "source": "Urban Archaeology in the Lower Amazon: Fieldwork Uncovering Large Pre-Colonial Villages in Santarém, Journal of Field Archaeology, 2025"
+  },
+  {
+    "site": "Juruti",
+    "region": "Brazil",
+    "features": "Site on the lower Amazon associated with the Konduri culture and Amazonian dark earths (ADEs), reflecting anthropogenic landscape modification.",
+    "source": "Urban Archaeology in the Lower Amazon: Fieldwork Uncovering Large Pre-Colonial Villages in Santarém, Journal of Field Archaeology, 2025"
+  },
+  {
+    "site": "Marajó Island",
+    "region": "Brazil",
+    "features": "Island at the mouth of the Amazon River with archaeological evidence of complex societies and large settlements.",
+    "source": "Lost Cities of the Amazon, Scientific American, October 2009"
+  },
+  {
+    "site": "Llanos de Mojos",
+    "region": "Bolivia",
+    "features": "Lowland region with evidence of complex societies, monumental earthworks, and pre-Columbian urbanism.",
+    "source": "Lost Cities of the Amazon, Scientific American, October 2009"
+  }
+]

@@ -1,0 +1,9 @@
+You are a scientific expert in geoarchaeology. Your task is to refine and strengthen the following geoarchaeological answer using the retrieved context below.
+
+Context:
+{context}
+
+Original Answer:
+{original_answer}
+
+Please reformulate the answer to improve scientific rigor and completeness. At the end, briefly explain the improvements you made.

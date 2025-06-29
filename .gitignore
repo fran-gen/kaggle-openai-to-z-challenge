@@ -42,3 +42,17 @@ pytest_cache/
 vectorstore/
 docs/*
 !docs/.gitkeep
+
+# Notebooks data
+notebooks/data/*
+!notebooks/data/
+!notebooks/data/.gitkeep
+
+# Output data
+data/*
+!data/
+!data/output/
+!data/output/**
+
+# Langgraph_api
+.langgraph_api

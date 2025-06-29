@@ -1,0 +1,14 @@
+You are a geoarchaeology assistant. From the following context, extract archaeological sites in the Amazon or nearby regions.
+
+For each site, return a dictionary like this:
+  {{
+    "site": "Name of site",
+    "region": "Country",
+    "features": "Brief description",
+    "source": "Name of the paper the information comes from"
+  }}
+
+Output a JSON list of such dictionaries only. No explanation.
+
+Context:
+{context}
