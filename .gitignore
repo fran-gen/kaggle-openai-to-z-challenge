@@ -51,7 +51,8 @@ notebooks/data/*
 # Output data
 data/*
 !data/
-!data/.gitkeep
+!data/output/
+!data/output/**
 
 # Langgraph_api
 .langgraph_api
